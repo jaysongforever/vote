@@ -1,0 +1,157 @@
+{
+  "data": {
+    "spaces": [
+      {
+        "id": "shapeshiftdao.eth",
+        "name": "ShapeShift",
+        "about": "This Snapshot, governed by FOX Token holders, controls the ShapeShift DAO Treasury.",
+        "network": "1",
+        "symbol": "FOX",
+        "terms": "https://shapeshift.com/terms-of-service",
+        "skin": "shapeshift",
+        "avatar": "https://static.coincap.io/assets/icons/256/fox.png",
+        "twitter": "ShapeShift",
+        "website": "https://shapeshift.com",
+        "github": "shapeshift",
+        "coingecko": null,
+        "private": false,
+        "domain": null,
+        "members": [
+          "0x72E7b10ed4E45b57E5b97445BC5BA25501E76154",
+          "0x1D01A2FefB8883A5cfB8c77B19d9b96794581288",
+          "0x557c0014BF5499c36D43c1942D7B7Be93f40d019",
+          "0xB6DC9191908326af97A54077A1A44129C1a696Dd"
+        ],
+        "admins": [
+          "0x72E7b10ed4E45b57E5b97445BC5BA25501E76154",
+          "0x1D01A2FefB8883A5cfB8c77B19d9b96794581288",
+          "0x557c0014BF5499c36D43c1942D7B7Be93f40d019",
+          "0xB6DC9191908326af97A54077A1A44129C1a696Dd"
+        ],
+        "categories": ["protocol", "service"],
+        "plugins": { "safeSnap": { "address": "0xAf2D760E28Cff61447135714e6b90fA3079396e5" } },
+        "followersCount": 2713,
+        "parent": null,
+        "children": [],
+        "voting": { "delay": null, "period": null, "type": null, "quorum": 4000000, "privacy": "", "hideAbstain": false },
+        "strategies": [
+          {
+            "name": "multichain",
+            "network": "1",
+            "params": {
+              "graphs": { "100": "https://api.thegraph.com/subgraphs/name/levinswap/xdai-blocks", "137": "https://api.thegraph.com/subgraphs/name/sameepsi/maticblocks" },
+              "symbol": "FOX",
+              "strategies": [
+                { "name": "erc20-balance-of", "params": { "address": "0xc770eefad204b5180df6a14ee197d99d808ee52d", "decimals": 18 }, "network": "1" },
+                { "name": "erc20-balance-of", "params": { "address": "0x21a42669643f45Bc0e086b8Fc2ed70c23D67509d", "decimals": 18 }, "network": "100" },
+                { "name": "erc20-balance-of", "params": { "address": "0x65A05DB8322701724c197AF82C9CaE41195B0aA8", "decimals": 18 }, "network": "137" },
+                {
+                  "name": "staked-uniswap",
+                  "params": {
+                    "symbol": "FOX",
+                    "decimals": 18,
+                    "tokenAddress": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
+                    "stakingAddress": "0xDd80E21669A664Bce83E3AD9a0d74f8Dad5D9E72",
+                    "uniswapAddress": "0x470e8de2ebaef52014a47cb5e6af86884947f08c"
+                  },
+                  "network": "1"
+                },
+                {
+                  "name": "staked-uniswap",
+                  "params": {
+                    "symbol": "FOX",
+                    "decimals": 18,
+                    "tokenAddress": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
+                    "stakingAddress": "0x212ebf9fd3c10f371557b08e993eaab385c3932b",
+                    "uniswapAddress": "0x470e8de2ebaef52014a47cb5e6af86884947f08c"
+                  },
+                  "network": "1"
+                },
+                {
+                  "name": "staked-uniswap",
+                  "params": {
+                    "symbol": "FOX",
+                    "decimals": 18,
+                    "tokenAddress": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
+                    "stakingAddress": "0xc54B9F82C1c54E9D4d274d633c7523f2299c42A0",
+                    "uniswapAddress": "0x470e8de2ebaef52014a47cb5e6af86884947f08c"
+                  },
+                  "network": "1"
+                },
+                {
+                  "name": "staked-uniswap",
+                  "params": {
+                    "symbol": "FOX",
+                    "decimals": 18,
+                    "tokenAddress": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
+                    "stakingAddress": "0x24fd7fb95dc742e23dc3829d3e656feeb5f67fa0",
+                    "uniswapAddress": "0x470e8de2ebaef52014a47cb5e6af86884947f08c"
+                  },
+                  "network": "1"
+                },
+                { "name": "honeyswap", "params": { "symbol": "FOX", "address": "0x21a42669643f45Bc0e086b8Fc2ed70c23D67509d", "decimals": 18 }, "network": "100" }
+              ]
+            }
+          },
+          {
+            "name": "contract-call",
+            "network": "1",
+            "params": {
+              "symbol": "FOX",
+              "address": "0x3923f574860d14764a999ae31dd8d7fa1614aa43",
+              "decimals": 18,
+              "methodABI": {
+                "name": "balanceOfUnderlying",
+                "type": "function",
+                "inputs": [{ "name": "holder", "type": "address", "internalType": "address" }],
+                "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+                "payable": false,
+                "constant": true,
+                "stateMutability": "view"
+              }
+            }
+          },
+          { "name": "erc20-balance-of", "network": "1", "params": { "symbol": "tFOX", "address": "0x808d3e6b23516967ceae4f17a5f9038383ed5311", "decimals": 18 } },
+          { "name": "erc20-balance-of", "network": "1", "params": { "symbol": "FOXy", "address": "0xDc49108ce5C57bc3408c3A5E95F3d864eC386Ed3", "decimals": 18 } },
+          {
+            "name": "contract-call",
+            "network": "1",
+            "params": {
+              "symbol": "FOX",
+              "address": "0x8d7c80b08b8E043AcCc5fE24911Ddc21b2408922",
+              "decimals": 18,
+              "methodABI": {
+                "name": "balanceOfUnderlying",
+                "type": "function",
+                "inputs": [{ "name": "holder", "type": "address", "internalType": "address" }],
+                "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+                "payable": false,
+                "constant": true,
+                "stateMutability": "view"
+              }
+            }
+          },
+          { "name": "erc20-balance-of", "network": "1", "params": { "symbol": "scFOX-0324", "address": "0x04979cccc2f854e167daad0ae095da49eae4842e", "decimals": 18 } },
+          { "name": "hedgey", "network": "100", "params": { "token": "0x21a42669643f45Bc0e086b8Fc2ed70c23D67509d", "decimals": 18, "contractAddress": "0x2AA5d15Eb36E5960d056e8FeA6E7BB3e2a06A351" } },
+          {
+            "name": "delegation",
+            "network": "1",
+            "params": {
+              "symbol": "FOX (delegated)",
+              "strategies": [
+                { "name": "erc20-balance-of", "params": { "symbol": "FOX", "address": "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d", "decimals": 18 } },
+                { "name": "erc20-balance-of", "params": { "symbol": "FOXy", "address": "0xDc49108ce5C57bc3408c3A5E95F3d864eC386Ed3", "decimals": 18 } },
+                { "name": "erc20-balance-of", "params": { "symbol": "tFOX", "address": "0x808d3e6b23516967ceae4f17a5f9038383ed5311", "decimals": 18 } },
+                { "name": "erc20-balance-of", "params": { "symbol": "scFOX-0324", "address": "0x04979cccc2f854e167daad0ae095da49eae4842e", "decimals": 18 } }
+              ],
+              "delegationSpace": "shapeshiftdao.eth"
+            }
+          }
+        ],
+        "validation": { "name": "basic", "params": {} },
+        "filters": { "minScore": 100, "onlyMembers": false },
+        "treasuries": [{ "name": "ShapeShift DAO Treasury", "address": "0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be", "network": "1" }]
+      }
+    ]
+  }
+}
